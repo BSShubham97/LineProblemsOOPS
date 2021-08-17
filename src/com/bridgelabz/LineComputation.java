@@ -5,12 +5,11 @@ package com.bridgelabz;
  * @ssince 16-08-2021
  */
 
-import javax.sound.sampled.Line;
 import java.util.Scanner;
 
 public class LineComputation {
 
-    public void findLength(){
+    public double findLength(){
         Scanner sc= new Scanner(System.in);
         int x1,x2,y1,y2;
         double length;
@@ -29,12 +28,24 @@ public class LineComputation {
 
         length=Math.sqrt((Math.pow(a,2)+Math.pow(b,2)));
         System.out.println("Length of line is :"+length);
+        return length;
     }
+public void isEqual(double length1,double length2){
+    if (length1==length2)
+    {
+        System.out.println("Lines are Equal");
+    }
+    else
+        System.out.println("Lines are not equal");
+}
 
     public static void main(String[] args) {
         System.out.println("Welcome to line computation program");
         LineComputation lineComputation = new LineComputation();
-        lineComputation.findLength();
+        LineComputation lineComputation2 = new LineComputation();
+       double line1= lineComputation.findLength();
+        double line2= lineComputation2.findLength();
+        lineComputation.isEqual(line1,line2);
     }
     }
 
